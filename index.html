@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS Kelasbahasa.id</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<div id="loginScreen" class="login-wrap">
+  <form id="loginForm" class="login-card">
+    <div class="login-logo">🎓 <span>LMS Kelasbahasa<span class="accent">.id</span></span></div>
+    <p class="login-sub">Masuk sesuai akun & role kamu.</p>
+    <div id="loginError" class="msg err" hidden></div>
+    <label>Username</label>
+    <input type="text" id="loginUsername" autocomplete="username" required>
+    <label>Password</label>
+    <input type="password" id="loginPassword" autocomplete="current-password" required>
+    <button type="submit">Masuk</button>
+  </form>
+</div>
+
+<!-- ============ GANTI PASSWORD (wajib saat pertama login) ============ -->
+<div id="pwModal" class="modal-backdrop" hidden>
+  <div class="modal">
+    <h3>Ganti Password</h3>
+    <p id="pwModalNote" class="muted"></p>
+    <div id="pwError" class="msg err" hidden></div>
+    <div id="pwOldWrap">
+      <label>Password Lama</label>
+      <input type="password" id="pwOld">
+    </div>
+    <label>Password Baru (min. 6 karakter)</label>
+    <input type="password" id="pwNew">
+    <button id="pwSubmit">Simpan Password Baru</button>
+  </div>
+</div>
+
+<!-- ================= APP SHELL ================= -->
+<div id="app" class="app" hidden>
+  <header class="topbar">
+    <div class="brand">🎓 LMS Kelasbahasa<span class="accent">.id</span></div>
+    <nav id="tabNav" class="tabnav"></nav>
+    <div class="spacer"></div>
+    <button id="notifBtn" class="icon-btn">🔔 <span id="notifCount" class="badge-count" hidden>0</span></button>
+    <div class="userchip">
+      <span id="userName"></span>
+      <span id="userRole" class="role-pill"></span>
+    </div>
+    <button id="changePwBtn" class="ghost-btn">Ganti Password</button>
+    <button id="logoutBtn" class="ghost-btn">Keluar</button>
+  </header>
+
+  <div id="notifPanel" class="notif-panel" hidden></div>
+
+  <main id="content" class="content"></main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
